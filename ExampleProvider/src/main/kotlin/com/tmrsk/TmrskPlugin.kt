@@ -8,6 +8,5 @@ import com.lagradost.cloudstream3.plugins.Plugin
 class TmrskPlugin : Plugin() {
     override fun load(context: Context) {
         registerMainAPI(CanliYayinProvider())
-        registerMainAPI(PuhuTvProvider())
     }
 }
