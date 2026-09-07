@@ -1,0 +1,8 @@
+#EXTM3U
+# Tmr-Dizi kişisel M3U listesi
+#
+# Örnek:
+# #EXTINF:-1 tvg-logo="https://example.com/poster.png" group-title="Diziler",Örnek Dizi
+# https://example.com/yayin/playlist.m3u8
+#
+# Yalnızca kullanma/yeniden iletme izniniz bulunan yayın adreslerini ekleyin.
