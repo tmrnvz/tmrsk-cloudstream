@@ -38,5 +38,25 @@
         "description": "Famelack d\u00fcnya TV, radyo ve canl\u0131 kameralar\u0131",
         "url": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/Famelack.cs3",
         "name": "Famelack"
+    },
+    {
+        "iconUrl": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/main/icon.png",
+        "fileHash": "sha256-7da37c13374dd3a106e0a53f1b2b7b5670aeb7e535e0a245991fa779f3bc5b41",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/tmrnvz/tmrsk-cloudstream",
+        "fileSize": 1065,
+        "status": 1,
+        "language": "tr",
+        "authors": [
+            "tmrsk"
+        ],
+        "tvTypes": [
+            "Live"
+        ],
+        "version": 3,
+        "internalName": "tmrsk",
+        "description": "Eski birle\u015fik tmrsk paketini temizler. G\u00fcncel eklentileri ayr\u0131 kurun.",
+        "url": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/tmrsk.cs3",
+        "name": "tmrsk"
     }
 ]
