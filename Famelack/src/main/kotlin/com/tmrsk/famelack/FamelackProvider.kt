@@ -27,12 +27,17 @@ class FamelackProvider : MainAPI() {
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
         val rows = mediaTypes.map { media ->
             val metadata = app.get("$mainUrl/${media.id}/raw/countries_metadata.json")
-                .parsedSafe<Map<String, CountryMeta>>().orEmpty()
-            val countries = metadata.entries
-                .filter { it.value.hasChannels && it.value.channelCount > 0 }
-                .sortedWith(compareBy<Map.Entry<String, CountryMeta>>(
-                    { if (it.key.equals("TR", true)) 0 else 1 },
-                    { it.value.country }
+                .parsedSafe<Map<String, Any?>>().orEmpty()
+                .mapNotNull { (code, rawInfo) ->
+                    runCatching { parseJson<CountryMeta>(rawInfo.toJson()) }
+                        .getOrNull()
+                        ?.let { code to it }
+                }
+            val countries = metadata
+                .filter { (_, info) -> info.hasChannels && info.channelCount > 0 }
+                .sortedWith(compareBy<Pair<String, CountryMeta>>(
+                    { if (it.first.equals("TR", true)) 0 else 1 },
+                    { it.second.country }
                 ))
                 .map { (code, info) -> toCountryResponse(media, code.lowercase(), info) }
             HomePageList(media.title, countries, isHorizontalImages = false)
@@ -52,7 +57,7 @@ class FamelackProvider : MainAPI() {
     override suspend fun load(url: String): LoadResponse {
         val selection = parseJson<CountrySelection>(url)
         val stations = app.get("$mainUrl/${selection.mediaId}/raw/countries/${selection.code}.json")
-            .parsedSafe<List<Station>>().orEmpty()
+            .parsedSafe<Array<Station>>()?.toList().orEmpty()
             .filter { it.sources.streams.isNotEmpty() || it.sources.youtube.isNotEmpty() }
 
         val episodes = stations.map { station ->
