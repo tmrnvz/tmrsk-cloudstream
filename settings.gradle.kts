@@ -17,3 +17,5 @@ fun File.eachDir(block: (File) -> Unit) {
 
 include("CanliYayin")
 project(":CanliYayin").projectDir = file("ExampleProvider")
+
+include("Famelack")
