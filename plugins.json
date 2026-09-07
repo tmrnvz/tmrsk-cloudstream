@@ -1,9 +1,9 @@
 [
     {
-        "fileHash": "sha256-7610dd778b9536936bd5b21af6a26bc21fb8c0650dbe8fefc5d2083a578dfa76",
+        "fileHash": "sha256-05ead32c0b66cafe72613dfc527252af3a8de4c673590dcc0bbf1d650ad9d3a5",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/tmrnvz/tmrsk-cloudstream",
-        "fileSize": 15520,
+        "fileSize": 15524,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -14,16 +14,16 @@
         ],
         "version": 10,
         "internalName": "CanliYayin",
-        "description": "Türkiye açık canlı yayınları - 2026 güncel",
+        "description": "T\u00fcrkiye a\u00e7\u0131k canl\u0131 yay\u0131nlar\u0131 - 2026 g\u00fcncel",
         "url": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/CanliYayin.cs3",
         "name": "CanliYayin"
     },
     {
         "iconUrl": "https://famelack.com/assets/favicons/favicon-512.png",
-        "fileHash": "sha256-573b825705b25fb37f2105f04ccc007d2f368ff48e4cf63bc2e800157e490157",
+        "fileHash": "sha256-d203761051cf61a76a93b6fa2b9bc7adfefc305ed6b30e9c6fc2597aa6be8bcd",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/tmrnvz/tmrsk-cloudstream",
-        "fileSize": 20783,
+        "fileSize": 21991,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -33,9 +33,9 @@
             "Live",
             "TvSeries"
         ],
-        "version": 10,
+        "version": 12,
         "internalName": "Famelack",
-        "description": "Famelack dünya TV, radyo ve canlı kameraları - 2026 güncel",
+        "description": "Famelack d\u00fcnya TV, radyo ve canl\u0131 kameralar\u0131 - 2026 g\u00fcncel",
         "url": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/Famelack.cs3",
         "name": "Famelack"
     }
