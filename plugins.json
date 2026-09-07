@@ -17,5 +17,26 @@
         "description": "T\u00fcrkiye a\u00e7\u0131k canl\u0131 yay\u0131nlar\u0131",
         "url": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/CanliYayin.cs3",
         "name": "CanliYayin"
+    },
+    {
+        "iconUrl": "https://famelack.com/assets/favicons/favicon-512.png",
+        "fileHash": "sha256-573b825705b25fb37f2105f04ccc007d2f368ff48e4cf63bc2e800157e490157",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/tmrnvz/tmrsk-cloudstream",
+        "fileSize": 20783,
+        "status": 1,
+        "language": "tr",
+        "authors": [
+            "tmrsk"
+        ],
+        "tvTypes": [
+            "Live",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "Famelack",
+        "description": "Famelack d\u00fcnya TV, radyo ve canl\u0131 kameralar\u0131",
+        "url": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/Famelack.cs3",
+        "name": "Famelack"
     }
 ]
