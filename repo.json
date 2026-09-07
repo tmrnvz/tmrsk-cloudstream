@@ -3,6 +3,6 @@
   "description": "CanliYayin ve Famelack bağımsız eklentiler",
   "manifestVersion": 1,
   "pluginLists": [
-    "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/refs/heads/builds/plugins-v5.json"
+    "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/plugins-v5.json"
   ]
 }
