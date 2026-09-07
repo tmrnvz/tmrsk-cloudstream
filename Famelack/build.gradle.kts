@@ -1,4 +1,4 @@
-version = 11
+version = 12
 
 cloudstream {
     description = "Famelack dünya TV, radyo ve canlı kameraları - 2026 güncel"
