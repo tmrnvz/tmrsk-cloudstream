@@ -1,14 +1,9 @@
 rootProject.name = "CloudstreamPlugins"
 
-// This file sets what projects are included.
-// All new projects should get automatically included unless specified in the "disabled" variable.
-
-val disabled = listOf("ExampleProvider", "Migration")
+val disabled = listOf("ExampleProvider", "Migration", "Famelack")
 
 File(rootDir, ".").eachDir { dir ->
-    if (!disabled.contains(dir.name) && File(dir, "build.gradle.kts").exists()) {
-        include(dir.name)
-    }
+    if (!disabled.contains(dir.name) && File(dir, "build.gradle.kts").exists()) include(dir.name)
 }
 
 fun File.eachDir(block: (File) -> Unit) {
@@ -18,4 +13,5 @@ fun File.eachDir(block: (File) -> Unit) {
 include("CanliYayin")
 project(":CanliYayin").projectDir = file("ExampleProvider")
 
-include("Famelack")
+include("DunyaTV")
+project(":DunyaTV").projectDir = file("Famelack")
