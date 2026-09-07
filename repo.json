@@ -1,8 +1,8 @@
 {
-  "name": "tmrsk Güncel",
-  "description": "CanliYayin ve Famelack ayrı eklentiler",
+  "name": "tmrsk Ayrı Eklentiler v5",
+  "description": "CanliYayin ve Famelack bağımsız eklentiler",
   "manifestVersion": 1,
   "pluginLists": [
-    "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/refs/heads/builds/plugins.json?rev=4"
+    "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/refs/heads/builds/plugins-v5.json"
   ]
 }
