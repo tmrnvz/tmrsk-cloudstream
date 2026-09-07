@@ -60,6 +60,25 @@
         "name": "DunyaTV"
     },
     {
+        "fileHash": "sha256-acc777fc443511b67e3e299bc00ab1e6b1a1cf359826b44ff6fe7bd1cc568e5d",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/tmrnvz/tmrsk-cloudstream",
+        "fileSize": 15031,
+        "status": 3,
+        "language": "tr",
+        "authors": [
+            "tmrsk"
+        ],
+        "tvTypes": [
+            "Live"
+        ],
+        "version": 1,
+        "internalName": "TmrDizi",
+        "description": "GitHub \u00fczerindeki ki\u015fisel dizi M3U listesini oynat\u0131r",
+        "url": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/TmrDizi.cs3",
+        "name": "TmrDizi"
+    },
+    {
         "fileHash": "sha256-94ad8a037e4c6de97958b43abf1c0bacfe22dcdebf60233804d836480ecc0432",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/tmrnvz/tmrsk-cloudstream",
@@ -116,5 +135,24 @@
         "description": "Yasal yay\u0131n siteleri i\u00e7in e\u011fitim ama\u00e7l\u0131 CloudStream \u015fablonu",
         "url": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/TmrPalTemplate.cs3",
         "name": "TmrPalTemplate"
+    },
+    {
+        "fileHash": "sha256-bc1c8211739f58ca3c29a9b4d5495945b15051f6e51ee7a125c88c3f99c293c5",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/tmrnvz/tmrsk-cloudstream",
+        "fileSize": 15020,
+        "status": 3,
+        "language": "tr",
+        "authors": [
+            "tmrsk"
+        ],
+        "tvTypes": [
+            "Live"
+        ],
+        "version": 1,
+        "internalName": "TmrSpor",
+        "description": "GitHub \u00fczerindeki ki\u015fisel spor M3U listesini oynat\u0131r",
+        "url": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/TmrSpor.cs3",
+        "name": "TmrSpor"
     }
 ]
