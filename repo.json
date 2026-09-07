@@ -1,8 +1,8 @@
 {
-  "name": "tmrsk",
-  "description": "Türkiye açık canlı yayınları ve PuhuTV",
+  "name": "tmrsk Güncel",
+  "description": "CanliYayin ve Famelack ayrı eklentiler",
   "manifestVersion": 1,
   "pluginLists": [
-    "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/refs/heads/builds/plugins.json"
+    "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/refs/heads/builds/plugins.json?rev=3"
   ]
 }
