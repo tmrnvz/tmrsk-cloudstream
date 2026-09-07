@@ -62,7 +62,8 @@ class DunyaRadyolariProvider : MainAPI() {
     override suspend fun load(url: String): LoadResponse {
         val route = parseJson<Route>(url)
         route.station?.let { station ->
-            return newLiveStreamLoadResponse(station.name, mainUrl, url) {
+            val uniqueUrl = station.sources.streams.firstOrNull() ?: station.sources.youtube.firstOrNull() ?: "$mainUrl/${route.code}/${station.name.hashCode()}"
+            return newLiveStreamLoadResponse(station.name, uniqueUrl, url) {
                 posterUrl = station.logo.ifBlank { SYNQBRAND_POSTER }
                 plot = "${route.country} radyo yayını"
                 tags = listOf(route.country, mediaTitle)
