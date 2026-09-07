@@ -1,6 +1,6 @@
 rootProject.name = "CloudstreamPlugins"
 
-val disabled = listOf("ExampleProvider", "Migration", "Famelack", "TmrPalTemplate")
+val disabled = listOf("ExampleProvider", "Migration", "Famelack")
 
 File(rootDir, ".").eachDir { dir ->
     if (!disabled.contains(dir.name) && File(dir, "build.gradle.kts").exists()) include(dir.name)
