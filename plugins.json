@@ -58,5 +58,44 @@
         "description": "D\u00fcnya televizyonlar\u0131; T\u00fcrkiye do\u011frudan, di\u011fer \u00fclkeler ayr\u0131 listelenir",
         "url": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/DunyaTV.cs3",
         "name": "DunyaTV"
+    },
+    {
+        "fileHash": "sha256-ebfa94c12ff621f86e4faf6d02accd65f29a13dfb99671a5b60b8202adadfc92",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/tmrnvz/tmrsk-cloudstream",
+        "fileSize": 15019,
+        "status": 3,
+        "language": "tr",
+        "authors": [
+            "tmrsk"
+        ],
+        "tvTypes": [
+            "Live"
+        ],
+        "version": 1,
+        "internalName": "TmrIPTV",
+        "description": "GitHub \u00fczerindeki ki\u015fisel M3U kanal listesini oynat\u0131r",
+        "url": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/TmrIPTV.cs3",
+        "name": "TmrIPTV"
+    },
+    {
+        "fileHash": "sha256-8d4d9fdeb540a832de3c6565a9915a108c3533edf39e29e45a50550cc3cdf4b9",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/tmrnvz/tmrsk-cloudstream",
+        "fileSize": 10394,
+        "status": 3,
+        "language": "tr",
+        "authors": [
+            "tmrsk"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "TmrPalTemplate",
+        "description": "Yasal yay\u0131n siteleri i\u00e7in e\u011fitim ama\u00e7l\u0131 CloudStream \u015fablonu",
+        "url": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/TmrPalTemplate.cs3",
+        "name": "TmrPalTemplate"
     }
 ]
