@@ -1,7 +1,7 @@
-version = 1
+version = 10
 
 cloudstream {
-    description = "Famelack dünya TV, radyo ve canlı kameraları"
+    description = "Famelack dünya TV, radyo ve canlı kameraları - 2026 güncel"
     authors = listOf("tmrsk")
     status = 1
     tvTypes = listOf("Live", "TvSeries")
