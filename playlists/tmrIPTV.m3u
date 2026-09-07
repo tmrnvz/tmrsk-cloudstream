@@ -1,0 +1,12 @@
+#EXTM3U
+# tmrIPTV kişisel kanal listesi
+#
+# Yeni kanal ekleme örneği:
+# #EXTINF:-1 tvg-logo="https://example.com/logo.png" group-title="Ulusal",Örnek Kanal
+# https://example.com/live/playlist.m3u8
+#
+# Gerekirse yayın satırından önce şu seçenekler kullanılabilir:
+# #EXTVLCOPT:http-referrer=https://example.com/
+# #EXTVLCOPT:http-user-agent=Mozilla/5.0
+#
+# Yalnızca kullanma/yeniden iletme izniniz bulunan resmî yayın adreslerini ekleyin.
