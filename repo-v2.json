@@ -1,0 +1,8 @@
+{
+  "name": "tmrsk v2",
+  "description": "CanliYayin ve Famelack ayrı eklentiler",
+  "manifestVersion": 1,
+  "pluginLists": [
+    "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/refs/heads/builds/plugins.json?rev=2"
+  ]
+}
