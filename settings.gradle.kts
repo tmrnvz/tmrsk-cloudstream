@@ -19,6 +19,3 @@ include("CanliYayin")
 project(":CanliYayin").projectDir = file("ExampleProvider")
 
 include("Famelack")
-
-include("tmrsk")
-project(":tmrsk").projectDir = file("Migration")
