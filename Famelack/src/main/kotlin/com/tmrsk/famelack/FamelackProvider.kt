@@ -29,7 +29,8 @@ class FamelackProvider : MainAPI() {
             val metadata = app.get("$mainUrl/${media.id}/raw/countries_metadata.json")
                 .parsedSafe<Map<String, Any?>>().orEmpty()
                 .mapNotNull { (code, rawInfo) ->
-                    runCatching { parseJson<CountryMeta>(rawInfo.toJson()) }
+                    val json = rawInfo?.toJson() ?: return@mapNotNull null
+                    runCatching { parseJson<CountryMeta>(json) }
                         .getOrNull()
                         ?.let { code to it }
                 }
