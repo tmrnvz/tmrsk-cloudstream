@@ -21,7 +21,7 @@ class TmrDiziProvider : MainAPI() {
 
     private suspend fun channels(): List<Channel> {
         cachedChannels?.let { return it }
-        return parseM3u(app.get(mainUrl).text).also { cachedChannels = it }
+        return parseM3u(app.get(mainUrl).textLarge).also { cachedChannels = it }
     }
 
     private suspend fun series(): List<Series> = channels()
