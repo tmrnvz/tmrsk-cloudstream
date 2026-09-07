@@ -16,11 +16,11 @@ project(":CanliYayin").projectDir = file("ExampleProvider")
 include("DunyaTV")
 project(":DunyaTV").projectDir = file("Famelack")
 
-include("TmrFilm")
-project(":TmrFilm").projectDir = file("Tmr-Film")
+include("Tmr-Film")
+project(":Tmr-Film").projectDir = file("Tmr-Film")
 
-include("TmrSpor")
-project(":TmrSpor").projectDir = file("Tmr-Spor")
+include("Tmr-Spor")
+project(":Tmr-Spor").projectDir = file("Tmr-Spor")
 
-include("TmrDizi")
-project(":TmrDizi").projectDir = file("Tmr-Dizi")
+include("Tmr-Dizi")
+project(":Tmr-Dizi").projectDir = file("Tmr-Dizi")
