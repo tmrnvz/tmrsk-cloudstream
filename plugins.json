@@ -60,10 +60,10 @@
         "name": "DunyaTV"
     },
     {
-        "fileHash": "sha256-27f7812aa3eb3b49989384190f2373c69df95245673cda2bfff1b59a7f8bb073",
+        "fileHash": "sha256-d12563dfe554a806edc38a58dbf8a456e5b7cf5cc80d69575943ea9c52453dfa",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/tmrnvz/tmrsk-cloudstream",
-        "fileSize": 21192,
+        "fileSize": 21223,
         "status": 3,
         "language": "tr",
         "authors": [
@@ -72,7 +72,7 @@
         "tvTypes": [
             "TvSeries"
         ],
-        "version": 2,
+        "version": 4,
         "internalName": "TmrDizi",
         "description": "M3U listesindeki dizileri sezon ve b\u00f6l\u00fcm d\u00fczeninde oynat\u0131r",
         "url": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/TmrDizi.cs3",
