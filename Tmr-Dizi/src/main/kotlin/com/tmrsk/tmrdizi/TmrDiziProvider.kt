@@ -15,33 +15,75 @@ class TmrDiziProvider : MainAPI() {
     override val hasMainPage = true
     override val hasQuickSearch = true
     override val hasDownloadSupport = false
-    override val supportedTypes = setOf(TvType.Live)
+    override val supportedTypes = setOf(TvType.TvSeries)
 
-    private suspend fun channels(): List<Channel> = parseM3u(app.get(mainUrl).text)
+    private var cachedChannels: List<Channel>? = null
+
+    private suspend fun channels(): List<Channel> {
+        cachedChannels?.let { return it }
+        return parseM3u(app.get(mainUrl).text).also { cachedChannels = it }
+    }
+
+    private suspend fun series(): List<Series> = channels()
+        .groupBy { canonicalSeriesName(it.group) }
+        .map { (title, episodes) ->
+            Series(
+                title = title,
+                poster = episodes.firstOrNull { it.logo.isNotBlank() }?.logo.orEmpty()
+            )
+        }
+        .sortedBy { it.title.lowercase() }
 
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
-        val rows = channels().groupBy { it.group.ifBlank { "Diğer" } }.map { (group, items) ->
-            HomePageList(group, items.map(::toSearchResponse), isHorizontalImages = true)
-        }
+        val rows = series()
+            .groupBy { alphabetGroup(it.title) }
+            .toSortedMap(compareBy<String> { if (it == "#") 1 else 0 }.thenBy { it })
+            .map { (letter, items) ->
+                HomePageList(
+                    "$letter Dizileri",
+                    items.map(::toSearchResponse),
+                    isHorizontalImages = true
+                )
+            }
         return newHomePageResponse(rows, hasNext = false)
     }
 
-    override suspend fun search(query: String): List<SearchResponse> =
-        channels().filter { it.title.contains(query, ignoreCase = true) }.map(::toSearchResponse)
+    override suspend fun search(query: String): List<SearchResponse> = series()
+        .filter { it.title.contains(query, ignoreCase = true) }
+        .map(::toSearchResponse)
 
     override suspend fun quickSearch(query: String): List<SearchResponse> = search(query)
 
-    private fun toSearchResponse(channel: Channel): LiveSearchResponse =
-        newLiveSearchResponse(channel.title, channel.toJson(), TvType.Live) {
-            posterUrl = channel.logo.ifBlank { null }
+    private fun toSearchResponse(series: Series): TvSeriesSearchResponse =
+        newTvSeriesSearchResponse(series.title, SeriesRef(series.title).toJson(), TvType.TvSeries) {
+            posterUrl = series.poster.ifBlank { null }
         }
 
     override suspend fun load(url: String): LoadResponse {
-        val channel = parseJson<Channel>(url)
-        return newLiveStreamLoadResponse(channel.title, channel.url, url) {
+        val ref = parseJson<SeriesRef>(url)
+        val seriesEpisodes = channels()
+            .filter { canonicalSeriesName(it.group).equals(ref.title, ignoreCase = true) }
+            .mapIndexed { index, channel -> toEpisode(channel, index) }
+            .sortedWith(compareBy<Episode> { it.season ?: 1 }.thenBy { it.episode ?: 0 }.thenBy { it.name.orEmpty() })
+
+        val poster = seriesEpisodes.firstOrNull { !it.posterUrl.isNullOrBlank() }?.posterUrl
+        return newTvSeriesLoadResponse(ref.title, url, TvType.TvSeries, seriesEpisodes) {
+            posterUrl = poster
+            plot = "Tmr-Dizi • ${seriesEpisodes.size} bölüm"
+        }
+    }
+
+    private fun toEpisode(channel: Channel, fallbackIndex: Int): Episode {
+        val season = SEASON_REGEX.find(channel.title)?.groupValues?.get(1)?.toIntOrNull() ?: 1
+        val episode = EPISODE_REGEX.find(channel.title)?.groupValues?.get(1)?.toIntOrNull()
+            ?: fallbackIndex + 1
+        val audio = AUDIO_REGEX.find(channel.title)?.value?.lowercase()?.replaceFirstChar { it.uppercase() }
+
+        return newEpisode(channel.toJson()) {
+            name = audio ?: "Bölüm $episode"
+            this.season = season
+            this.episode = episode
             posterUrl = channel.logo.ifBlank { null }
-            plot = "Tmr-Dizi • ${channel.group}"
-            tags = listOf(channel.group)
         }
     }
 
@@ -72,6 +114,9 @@ class TmrDiziProvider : MainAPI() {
         return true
     }
 
+    data class SeriesRef(val title: String)
+    data class Series(val title: String, val poster: String = "")
+
     data class Channel(
         val title: String,
         val url: String,
@@ -101,7 +146,7 @@ class TmrDiziProvider : MainAPI() {
                 !line.startsWith("#") && info != null -> {
                     val metadata = info!!
                     result += Channel(
-                        title = metadata.substringAfterLast(",").trim(),
+                        title = metadata.substringAfter(",", "Bölüm").trim(),
                         url = line.substringBefore("|"),
                         logo = attribute(metadata, "tvg-logo"),
                         group = attribute(metadata, "group-title").ifBlank { "Diğer" },
@@ -112,7 +157,23 @@ class TmrDiziProvider : MainAPI() {
                 }
             }
         }
-        return result.distinctBy { it.title.lowercase() }
+        return result.distinctBy { "${it.group.lowercase()}|${it.title.lowercase()}|${it.url}" }
+    }
+
+    private fun canonicalSeriesName(group: String): String {
+        val title = group.trim()
+        return when {
+            title.equals("Friends Dizisi", ignoreCase = true) -> "Friends"
+            title.equals("Forever", ignoreCase = true) -> "Forever"
+            title.matches(Regex("(?i)^The Simpsons\\s+27\\s*-\\s*32\\.\\s*Sezonlar$")) -> "The Simpsons"
+            title.matches(Regex("(?i)^Family Guy\\s*\\(13\\s*-\\s*24\\)$")) -> "Family Guy"
+            else -> title
+        }
+    }
+
+    private fun alphabetGroup(title: String): String {
+        val first = title.firstOrNull()?.uppercaseChar() ?: return "#"
+        return if (first.isLetter()) first.toString() else "#"
     }
 
     private fun attribute(line: String, key: String): String =
@@ -122,4 +183,10 @@ class TmrDiziProvider : MainAPI() {
         line.substringAfter("|", "").split("&")
             .firstOrNull { it.startsWith("$key=", ignoreCase = true) }
             ?.substringAfter("=").orEmpty()
+
+    companion object {
+        private val SEASON_REGEX = Regex("(?i)(?:^|\\s|-)\\s*(\\d+)\\.\\s*S(?:ezon)?\\b")
+        private val EPISODE_REGEX = Regex("(?i)Bölüm\\s*(\\d+)")
+        private val AUDIO_REGEX = Regex("(?i)Dublaj|Altyazı")
+    }
 }
