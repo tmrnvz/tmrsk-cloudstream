@@ -19,6 +19,7 @@ class FamelackProvider : MainAPI() {
     override val supportedTypes = setOf(TvType.Live, TvType.TvSeries)
 
     private val mediaId = "tv"
+    private val SYNQBRAND_POSTER = "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/main/images/SynqBrand-Radio.png"
     private val mediaTitle = "Dünya TV"
 
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
@@ -55,7 +56,7 @@ class FamelackProvider : MainAPI() {
 
     private fun stationResponse(code: String, country: String, station: Station): SearchResponse =
         newLiveSearchResponse(station.name, Route(code, country, station).toJson(), TvType.Live) {
-            posterUrl = station.logo.ifBlank { null }
+            posterUrl = station.logo.ifBlank { SYNQBRAND_POSTER }
         }
 
     override suspend fun load(url: String): LoadResponse {
@@ -63,7 +64,7 @@ class FamelackProvider : MainAPI() {
         route.station?.let { station ->
             val uniqueUrl = station.sources.streams.firstOrNull() ?: station.sources.youtube.firstOrNull() ?: "$mainUrl/${route.code}/${station.name.hashCode()}"
             return newLiveStreamLoadResponse(station.name, uniqueUrl, url) {
-                posterUrl = station.logo.ifBlank { null }
+                posterUrl = station.logo.ifBlank { SYNQBRAND_POSTER }
                 plot = "${route.country} canlı televizyon yayını"
                 tags = listOf(route.country, mediaTitle)
             }
@@ -71,7 +72,7 @@ class FamelackProvider : MainAPI() {
         val episodes = stations(route.code).map { station ->
             newEpisode(Route(route.code, route.country, station).toJson()) {
                 name = station.name
-                posterUrl = station.logo.ifBlank { null }
+                posterUrl = station.logo.ifBlank { SYNQBRAND_POSTER }
                 description = if (station.isGeoBlocked) "Coğrafi kısıtlamalı" else null
             }
         }
