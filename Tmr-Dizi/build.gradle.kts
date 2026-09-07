@@ -1,4 +1,4 @@
-version = 3
+version = 4
 
 cloudstream {
     description = "M3U listesindeki dizileri sezon ve bölüm düzeninde oynatır"
