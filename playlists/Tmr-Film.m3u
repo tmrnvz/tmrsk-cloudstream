@@ -1,0 +1,8 @@
+#EXTM3U
+# Tmr-Film kişisel M3U listesi
+#
+# Örnek:
+# #EXTINF:-1 tvg-logo="https://example.com/poster.jpg" group-title="Filmler",Örnek Film
+# https://example.com/video/film.m3u8
+#
+# Yalnızca kullanma/yeniden iletme izniniz bulunan yayın adreslerini ekleyin.
