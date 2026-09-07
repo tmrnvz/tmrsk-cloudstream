@@ -12,9 +12,9 @@
         "tvTypes": [
             "Live"
         ],
-        "version": 1,
+        "version": 10,
         "internalName": "CanliYayin",
-        "description": "T\u00fcrkiye a\u00e7\u0131k canl\u0131 yay\u0131nlar\u0131",
+        "description": "Türkiye açık canlı yayınları - 2026 güncel",
         "url": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/CanliYayin.cs3",
         "name": "CanliYayin"
     },
@@ -33,9 +33,9 @@
             "Live",
             "TvSeries"
         ],
-        "version": 1,
+        "version": 10,
         "internalName": "Famelack",
-        "description": "Famelack d\u00fcnya TV, radyo ve canl\u0131 kameralar\u0131",
+        "description": "Famelack dünya TV, radyo ve canlı kameraları - 2026 güncel",
         "url": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/Famelack.cs3",
         "name": "Famelack"
     }
