@@ -60,6 +60,25 @@
         "name": "DunyaTV"
     },
     {
+        "fileHash": "sha256-4899813136ae4243e4b0b519094d88ab9badc49be95d8b026585b0d5861d9de0",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/tmrnvz/tmrsk-cloudstream",
+        "fileSize": 15027,
+        "status": 3,
+        "language": "tr",
+        "authors": [
+            "tmrsk"
+        ],
+        "tvTypes": [
+            "Live"
+        ],
+        "version": 1,
+        "internalName": "Tmr-Film",
+        "description": "GitHub \u00fczerindeki ki\u015fisel film M3U listesini oynat\u0131r",
+        "url": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/Tmr-Film.cs3",
+        "name": "Tmr-Film"
+    },
+    {
         "fileHash": "sha256-ebfa94c12ff621f86e4faf6d02accd65f29a13dfb99671a5b60b8202adadfc92",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/tmrnvz/tmrsk-cloudstream",
