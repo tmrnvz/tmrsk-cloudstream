@@ -1,0 +1,24 @@
+[
+    {
+        "iconUrl": "https://puhutv-image.akamaized.net/19-07/13/puhutv_logo_300x300.jpg",
+        "fileHash": "sha256-5e14d43b75204a6b85d7142dacaaee35737b8b74cbe01e32d74c45503b19bdaa",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/tmrnvz/tmrsk-cloudstream",
+        "fileSize": 40873,
+        "status": 3,
+        "language": "tr",
+        "authors": [
+            "tmrsk"
+        ],
+        "tvTypes": [
+            "Live",
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "tmrsk",
+        "description": "T\u00fcrkiye a\u00e7\u0131k canl\u0131 yay\u0131nlar\u0131 ve PuhuTV",
+        "url": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/tmrsk.cs3",
+        "name": "tmrsk"
+    }
+]
