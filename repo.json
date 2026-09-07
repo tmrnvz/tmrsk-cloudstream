@@ -1,0 +1,8 @@
+{
+  "name": "tmrsk",
+  "description": "Türkiye açık canlı yayınları ve PuhuTV",
+  "manifestVersion": 1,
+  "pluginLists": [
+    "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/refs/heads/builds/plugins.json"
+  ]
+}
