@@ -19,11 +19,31 @@
         "name": "CanliYayin"
     },
     {
-        "iconUrl": "https://famelack.com/assets/favicons/favicon-512.png",
-        "fileHash": "sha256-d203761051cf61a76a93b6fa2b9bc7adfefc305ed6b30e9c6fc2597aa6be8bcd",
+        "iconUrl": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/main/images/SynqBrand-Radio.png",
+        "fileHash": "sha256-6d08c59cf100c07c2ace71e99c383bcc4982a89d0c571e33a7c685da68333ad1",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/tmrnvz/tmrsk-cloudstream",
-        "fileSize": 21991,
+        "fileSize": 21339,
+        "status": 1,
+        "language": "tr",
+        "authors": [
+            "tmrsk"
+        ],
+        "tvTypes": [
+            "Live"
+        ],
+        "version": 1,
+        "internalName": "DunyaRadyolari",
+        "description": "D\u00fcnya radyolar\u0131; T\u00fcrkiye do\u011frudan, di\u011fer \u00fclkeler ayr\u0131 listelenir",
+        "url": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/DunyaRadyolari.cs3",
+        "name": "DunyaRadyolari"
+    },
+    {
+        "iconUrl": "https://famelack.com/assets/favicons/favicon-512.png",
+        "fileHash": "sha256-c1503a208d894b2a9e4b71138609676418eaab361b4bff7f70780a26f6e16ba4",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/tmrnvz/tmrsk-cloudstream",
+        "fileSize": 21149,
         "status": 1,
         "language": "tr",
         "authors": [
@@ -33,10 +53,10 @@
             "Live",
             "TvSeries"
         ],
-        "version": 12,
-        "internalName": "Famelack",
-        "description": "Famelack d\u00fcnya TV, radyo ve canl\u0131 kameralar\u0131 - 2026 g\u00fcncel",
-        "url": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/Famelack.cs3",
-        "name": "Famelack"
+        "version": 1,
+        "internalName": "DunyaTV",
+        "description": "D\u00fcnya televizyonlar\u0131; T\u00fcrkiye do\u011frudan, di\u011fer \u00fclkeler ayr\u0131 listelenir",
+        "url": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/DunyaTV.cs3",
+        "name": "DunyaTV"
     }
 ]
