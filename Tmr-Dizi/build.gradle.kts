@@ -1,10 +1,10 @@
-version = 1
+version = 2
 
 cloudstream {
-    description = "GitHub üzerindeki kişisel dizi M3U listesini oynatır"
+    description = "M3U listesindeki dizileri sezon ve bölüm düzeninde oynatır"
     authors = listOf("tmrsk")
     status = 3
-    tvTypes = listOf("Live")
+    tvTypes = listOf("TvSeries")
     requiresResources = false
     language = "tr"
 }
