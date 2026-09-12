@@ -1,8 +1,9 @@
 {
   "name": "tmrsk",
-  "description": "CanliYayin ve Famelack bağımsız eklentiler",
+  "description": "CanliYayin, Dünya TV, Dünya Radyoları, kişisel M3U ve üçüncü taraf eklentiler",
   "manifestVersion": 1,
   "pluginLists": [
-    "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/plugins.json"
+    "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/builds/plugins.json",
+    "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/main/third-party.json"
   ]
 }
