@@ -1,0 +1,21 @@
+[
+  {
+    "fileHash": "sha256-eb96a4264d6484b95ee9af61e2228e5c458ddeae255b3fc12bbb2546cb9d311f",
+    "apiVersion": 1,
+    "repositoryUrl": "https://github.com/tmrnvz/tmrsk-cloudstream",
+    "fileSize": 180440,
+    "status": 1,
+    "language": "tr",
+    "authors": [
+      "Wiojelt"
+    ],
+    "tvTypes": [
+      "Live"
+    ],
+    "version": 10,
+    "internalName": "AslanTV",
+    "description": "Üçüncü taraf canlı spor eklentisi; kaynak kodu ve yayın kaynakları tmrsk tarafından doğrulanmamıştır",
+    "url": "https://raw.githubusercontent.com/tmrnvz/tmrsk-cloudstream/main/third-party/Spor%2B.cs3",
+    "name": "Spor+"
+  }
+]
